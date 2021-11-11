@@ -1,0 +1,37 @@
+.hds-icon {
+    display: inline-block;
+    background-color: currentColor;
+    width: 100%;
+    height: 100%;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: auto;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: auto;
+
+    &--size-xs {
+        width: $spacing-layout-2-xs;
+        height: $spacing-layout-2-xs;
+    }
+
+    &--size-s {
+        width: $spacing-layout-xs;
+        height: $spacing-layout-xs;
+    }
+
+    &--size-m {
+        width: $spacing-layout-s;
+        height: $spacing-layout-s;
+    }
+
+    &--size-l {
+        width: $spacing-layout-m;
+        height: $spacing-layout-m;
+    }
+
+    &--size-xl {
+        width: $spacing-layout-l;
+        height: $spacing-layout-l;
+    }
+}

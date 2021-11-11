@@ -1,0 +1,34 @@
+@mixin gutter() {
+    grid-gap: $spacing-xs;
+
+    @include breakpoint(s) {
+        grid-gap: $spacing-s;
+    }
+
+    @include breakpoint(m) {
+        grid-gap: $spacing-s;
+    }
+}
+
+//
+// Grid mixin for HDS-compatible grid columns
+//
+@mixin grid($layout-breakpoint: s) {
+    @supports ( grid-area: auto ) {
+        display: grid;
+
+        // On small sizes, we have 4 columns.
+        grid-template-columns: repeat(4, 1fr);
+
+        // From small or large up, we have 8 columns.
+        @include breakpoint($layout-breakpoint) {
+            grid-template-columns: repeat(8, 1fr);
+        }
+
+        // From large up, we have 12 columns.
+        @include breakpoint(l) {
+            grid-template-columns: repeat(12, 1fr);
+        }
+    }
+}
+

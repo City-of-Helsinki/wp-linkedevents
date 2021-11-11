@@ -1,0 +1,32 @@
+{
+    "name": "devgeniem/wp-linkedevents",
+    "type": "wordpress-plugin",
+    "license": "GPL-3.0-or-later",
+    "description": "LinkedEvents plugin",
+    "homepage": "https://geniem.com",
+    "authors": [
+        {
+            "name": "Ville Viklund",
+            "role": "Developer",
+            "homepage": "https://github.com/ville6000"
+        }
+    ],
+    "minimum-stability": "stable",
+    "keywords": [
+        "wordpress", "wp", "plugin"
+    ],
+    "require": {
+        "php": ">=7.4|^8"
+    },
+    "autoload": {
+        "psr-4": {"WPLinkedEvents\\": "src/"}
+    },
+    "require-dev": {
+        "devgeniem/geniem-rules-codesniffer": "^1"
+    },
+    "scripts": {
+        "lint": "vendor/bin/phpcs --standard=phpcs.xml.dist src/ -s --warning-severity=0",
+        "lint-all": "vendor/bin/phpcs --standard=phpcs.xml.dist src/",
+        "lint-fix": "vendor/bin/phpcbf --standard=phpcs.xml.dist --basepath=. .src/"
+    }
+}

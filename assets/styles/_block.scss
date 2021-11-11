@@ -1,0 +1,111 @@
+.wp-linked-events-block {
+    @include grid();
+    @include gutter();
+
+    &__event {
+        margin-bottom: $spacing-l;
+        color: $color-black;
+        word-break: break-all;
+        background-color: $color-black-5;
+        grid-column: span 4;
+        line-height: $lineheight-m;
+        font-size: $fontsize-body-m;
+
+        @include breakpoint(m) {
+            margin-bottom: 0;
+        }
+
+        @include breakpoint(l) {
+            grid-column: span 6;
+        }
+
+        @include breakpoint(xl) {
+            grid-column: span 4;
+        }
+    }
+
+    &__image-wrapper {
+        position: relative;
+    }
+
+    &__image-container {
+        position: relative;
+        padding-top: 75%;
+    }
+
+    &__image {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__keywords {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        &--floated {
+            position: absolute;
+            bottom: $spacing-2-xs;
+            left: $spacing-s;
+        }
+    }
+
+    &__keyword {
+        font-size: $fontsize-body-s;
+        font-weight: 700;
+        line-height: 1;
+        display: inline-flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        min-height: 32px;
+        margin: 0 $spacing-2-xs $spacing-2-xs 0;
+        color: $color-black;
+        background-color: $color-engel;
+        outline: none;
+    }
+
+    &__keyword-label {
+        line-height: $lineheight-m;
+        padding: $spacing-3-xs $spacing-2-xs;
+    }
+
+    &__fields {
+        padding: $spacing-s;
+    }
+
+    &__date {
+        font-size: $fontsize-body-l;
+        margin: $spacing-2-xs 0;
+    }
+
+    &__title {
+        font-size: $fontsize-heading-m;
+        line-height: $lineheight-s;
+        margin: $spacing-2-xs 0;
+    }
+
+    &__tickets {
+        margin-top: $spacing-xs;
+    }
+
+    &__link {
+        color: $color-black;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &:focus {
+            outline: .125rem dotted $color-black;
+        }
+    }
+}

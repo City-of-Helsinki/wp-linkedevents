@@ -1,0 +1,196 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Geniem LinkedEvents\n"
+"POT-Creation-Date: 2021-11-11 15:37+0200\n"
+"PO-Revision-Date: 2021-11-11 15:38+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: plugin.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
+"X-Poedit-SearchPathExcluded-2: node_modules\n"
+
+#: src/Integrations/LinkedEvents/Entities/Event.php:176
+msgid "Mon"
+msgstr "Ma"
+
+#: src/Integrations/LinkedEvents/Entities/Event.php:177
+msgid "Tue"
+msgstr "Ti"
+
+#: src/Integrations/LinkedEvents/Entities/Event.php:178
+msgid "Wed"
+msgstr "Ke"
+
+#: src/Integrations/LinkedEvents/Entities/Event.php:179
+msgid "Thu"
+msgstr "To"
+
+#: src/Integrations/LinkedEvents/Entities/Event.php:180
+msgid "Fri"
+msgstr "Pe"
+
+#: src/Integrations/LinkedEvents/Entities/Event.php:181
+msgid "Sat"
+msgstr "La"
+
+#: src/Integrations/LinkedEvents/Entities/Event.php:182
+msgid "Sun"
+msgstr "Su"
+
+#: src/Integrations/LinkedEvents/Entities/Event.php:203
+#: src/Integrations/LinkedEvents/Entities/Event.php:214
+msgid "at"
+msgstr "klo"
+
+#: src/LinkedEventsBlock.php:40
+msgid "WP LinkedEvents Block"
+msgstr ""
+
+#: src/LinkedEventsBlock.php:73
+msgid "Display LinkedEvent events"
+msgstr ""
+
+#: src/LinkedEventsBlock.php:113
+msgid "Start date"
+msgstr "Alkamispäivä"
+
+#: src/LinkedEventsBlock.php:117
+msgid "End date"
+msgstr "Päättymispäivä"
+
+#: src/LinkedEventsBlock.php:121
+msgid "Keywords"
+msgstr "Avainsanat"
+
+#: src/LinkedEventsBlock.php:125
+msgid "Places"
+msgstr "Paikat"
+
+#: src/LinkedEventsBlock.php:129
+msgid "Limit"
+msgstr "Määrä"
+
+#. Plugin Name of the plugin/theme
+#: src/LinkedEventsPlugin.php:236
+msgid "WP LinkedEvents"
+msgstr ""
+
+#: src/PageTemplates/page-wp-linked-events.php:28
+msgid "Event not found"
+msgstr "Tapahtumaa ei löytynyt"
+
+#: src/PageTemplates/page-wp-linked-events.php:93
+#: src/Partials/wp-linked-events-block.php:95
+msgid "Free"
+msgstr "Maksuton"
+
+#: src/PageTemplates/page-wp-linked-events.php:117
+#: src/PageTemplates/page-wp-linked-events.php:130
+msgid "Buy tickets"
+msgstr "Osta liput"
+
+#: src/PageTemplates/page-wp-linked-events.php:148
+msgid "Description"
+msgstr "Kuvaus"
+
+#: src/PageTemplates/page-wp-linked-events.php:158
+msgid "Date and time"
+msgstr "Päivä ja aika"
+
+#: src/PageTemplates/page-wp-linked-events.php:169
+msgid "Location"
+msgstr "Sjiainti"
+
+#: src/PageTemplates/page-wp-linked-events.php:193
+msgid "Open map"
+msgstr "Avaa kartta"
+
+#: src/PageTemplates/page-wp-linked-events.php:195
+#: src/PageTemplates/page-wp-linked-events.php:233
+#: src/PageTemplates/page-wp-linked-events.php:261
+#: src/PageTemplates/page-wp-linked-events.php:277
+msgid "Opens in new tab"
+msgstr "Avautuu uuteen välilehteen"
+
+#: src/PageTemplates/page-wp-linked-events.php:208
+msgid "Other information"
+msgstr "Muut tiedot"
+
+#: src/PageTemplates/page-wp-linked-events.php:231
+#: src/PageTemplates/page-wp-linked-events.php:274
+msgid "Directions (Google)"
+msgstr "Reittiohjeet (Google)"
+
+#: src/PageTemplates/page-wp-linked-events.php:247
+msgid "Directions"
+msgstr "Löydä perille"
+
+#: src/PageTemplates/page-wp-linked-events.php:258
+msgid "Directions (HSL)"
+msgstr "Reittiohjeet (HSL)"
+
+#: src/PageTemplates/page-wp-linked-events.php:297
+msgid "Related Events"
+msgstr "Muita samankaltaisia tapahtumia"
+
+#: src/Settings.php:71
+msgid "WP LinkedEvents settings"
+msgstr ""
+
+#: src/Settings.php:85
+msgid "Place"
+msgstr "Paikka"
+
+#: src/Settings.php:89
+msgid "Event page"
+msgstr "Tapahtuman sivu"
+
+#: src/Settings.php:90
+msgid "Page with Geniem LinkedEvents Page template selected"
+msgstr "Sivu, jossa Geniem LinkedEvents -sivumalli on valittuna"
+
+#: src/Settings.php:93
+msgid "Keyword groups"
+msgstr "Avainsanaryhmät"
+
+#: src/Settings.php:97
+msgid "Keyword group text"
+msgstr "Avainsanaryhmän teksti"
+
+#: src/Settings.php:98
+msgid "In example music"
+msgstr "Esimerkiksi musiikki"
+
+#: src/Settings.php:101
+msgid "Selected keywords"
+msgstr "Valitut avainsanat"
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/devgeniem/wp-linked-events"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "LinkedEvents plugin"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Geniem Oy"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://geniem.com"
+msgstr ""
