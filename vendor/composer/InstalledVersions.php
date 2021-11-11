@@ -32,7 +32,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '11a53aa7a1449a17dd241ba924e9131af5fe1b9d',
+    'reference' => 'fb5eca8133abb57a500f8934b7c26ffb07f517ea',
     'name' => 'devgeniem/wp-linkedevents',
   ),
   'versions' => 
@@ -44,7 +44,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '11a53aa7a1449a17dd241ba924e9131af5fe1b9d',
+      'reference' => 'fb5eca8133abb57a500f8934b7c26ffb07f517ea',
     ),
   ),
 );

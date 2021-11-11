@@ -25,8 +25,8 @@
         "devgeniem/geniem-rules-codesniffer": "^1"
     },
     "scripts": {
-        "lint": "vendor/bin/phpcs --standard=phpcs.xml.dist src/ -s --warning-severity=0",
-        "lint-all": "vendor/bin/phpcs --standard=phpcs.xml.dist src/",
-        "lint-fix": "vendor/bin/phpcbf --standard=phpcs.xml.dist --basepath=. .src/"
+        "lint": "vendor/bin/phpcs --standard=phpcs.xml.dist src/ -s --warning-severity=0 --ignore=vendor/composer/",
+        "lint-all": "vendor/bin/phpcs --standard=phpcs.xml.dist src/ --ignore=vendor/composer/",
+        "lint-fix": "vendor/bin/phpcbf --standard=phpcs.xml.dist --basepath=. .src/ --ignore=vendor/composer/"
     }
 }
