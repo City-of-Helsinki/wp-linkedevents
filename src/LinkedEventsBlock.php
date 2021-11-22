@@ -2,12 +2,12 @@
 
 namespace WPLinkedEvents;
 
-use Geniem\ACF\Block;
-use Geniem\ACF\Field\DatePicker;
-use Geniem\ACF\Field\Message;
-use Geniem\ACF\Field\Number;
-use Geniem\ACF\Field\Select;
-use Geniem\ACF\Renderer\PHP;
+use \Geniem\ACF\Block;
+use \Geniem\ACF\Field\DatePicker;
+use \Geniem\ACF\Field\Message;
+use \Geniem\ACF\Field\Number;
+use \Geniem\ACF\Field\Select;
+use \Geniem\ACF\Renderer\PHP;
 
 /**
  * LinkedEventsBlock
@@ -198,8 +198,7 @@ class LinkedEventsBlock {
         }
 
         $settings  = new Settings();
-        $places    = $settings->get_places_from_options();
-        $params    = $this->format_params( $data, $places );
+        $params    = $this->format_params( $data );
         $cache_key = 'wp-linked-events-block-' . md5( json_encode( $params ) );
         $response  = get_transient( $cache_key );
 
@@ -226,12 +225,11 @@ class LinkedEventsBlock {
     /**
      * Format params
      *
-     * @param array $data   Block data.
-     * @param array $places Places saved to options.
+     * @param array $data Block data.
      *
      * @return array
      */
-    public function format_params( array $data, array $places = [] ) : array {
+    public function format_params( array $data ) : array {
         global $post;
 
         $params = [
@@ -254,27 +252,12 @@ class LinkedEventsBlock {
                 : $data['keywords'];
         }
 
-        if ( ! empty( $data['place'] ) ) {
-            if ( is_array( $data['place'] ) ) {
-                $data['place'] = implode(
-                    ',',
-                    array_map(
-                        fn( $id ) => 'tprek:' . $id,
-                        $data['place']
-                    )
-                );
+        if ( ! empty( $data['places'] ) ) {
+            if ( is_array( $data['places'] ) ) {
+                $data['places'] = implode( ',', $data['places'] );
             }
 
-            $params['location'] = $data['place'];
-        }
-        else if ( ! empty( $places ) ) {
-            $params['location'] = implode(
-                ',',
-                array_map(
-                    fn( $id ) => 'tprek:' . $id,
-                    $places
-                )
-            );
+            $params['location'] = $data['places'];
         }
 
         return apply_filters(
@@ -319,19 +302,10 @@ class LinkedEventsBlock {
      */
     public function fill_places( array $field ) : array {
         $settings = new Settings();
-        $places   = $settings->get_places_from_options();
-        $choices  = $settings->get_place_choices();
+        $choices  = $settings->get_places_from_options();
 
-        if ( empty( $places ) || empty( $choices ) ) {
+        if ( empty( $choices ) ) {
             return $field;
-        }
-
-        $places = array_map( 'absint', $places );
-
-        foreach ( $choices as $id => $name ) {
-            if ( ! in_array( intval( $id ), $places, true ) ) {
-                unset( $choices[ $id ] );
-            }
         }
 
         $field['choices'] = $choices;

@@ -81,8 +81,16 @@ class Settings {
             $field_group->add_rule_group( $rule_group );
 
             $strings = [
-                'place'                        => [
-                    'label'        => __( 'Place', 'wp-linked-events' ),
+                'place_repeater'               => [
+                    'label'        => __( 'Places', 'wp-linked-events' ),
+                    'instructions' => __( '', 'wp-linked-events' ),
+                ],
+                'place_text'                   => [
+                    'label'        => __( 'Place text', 'wp-linked-events' ),
+                    'instructions' => __( '', 'wp-linked-events' ),
+                ],
+                'place_id'                     => [
+                    'label'        => __( 'Place ID', 'wp-linked-events' ),
                     'instructions' => __( '', 'wp-linked-events' ),
                 ],
                 'event_page'                   => [
@@ -103,14 +111,25 @@ class Settings {
                 ],
             ];
 
-            $place_field = ( new Select( $strings['place']['label'] ) )
-                ->set_key( "${key}_place" )
-                ->set_name( 'place' )
-                ->use_ui()
-                ->allow_multiple()
-                ->allow_null()
-                ->set_choices( [ $this, 'get_place_choices' ] )
-                ->set_instructions( $strings['place']['instructions'] );
+            $place_repeater_field = ( new Repeater( $strings['place_repeater']['label'] ) )
+                ->set_key( "${key}_place_repeater" )
+                ->set_name( 'place_repeater' )
+                ->set_instructions( $strings['place_repeater']['instructions'] );
+
+            $place_text_field = ( new Text( $strings['place_text']['label'] ) )
+                ->set_key( "${key}_place_text" )
+                ->set_name( 'place_text' )
+                ->set_instructions( $strings['place_text']['instructions'] );
+
+            $place_id_field = ( new Text( $strings['place_id']['label'] ) )
+                ->set_key( "${key}_place_id" )
+                ->set_name( 'place_id' )
+                ->set_instructions( $strings['place_id']['instructions'] );
+
+            $place_repeater_field->add_fields( [
+                $place_text_field,
+                $place_id_field,
+            ] );
 
             $event_page_field = ( new PostObject( $strings['event_page']['label'] ) )
                 ->set_key( "${key}_event_page" )
@@ -143,7 +162,7 @@ class Settings {
             ] );
 
             $field_group->add_fields( [
-                $place_field,
+                $place_repeater_field,
                 $event_page_field,
                 $event_keywords,
             ] );
@@ -156,25 +175,6 @@ class Settings {
         $field_group->register();
     }
 
-    /**
-     * Get place choices
-     *
-     * @return array
-     */
-    public function get_place_choices() : array {
-        $units   = ( new Integrations\Palvelukartta\ApiClient() )->get_units();
-        $choices = [];
-
-        if ( ! empty( $units ) ) {
-            foreach ( $units as $unit ) {
-                $choices[ $unit->id ] = esc_html( $unit->name_fi ?? null );
-            }
-
-            asort( $choices );
-        }
-
-        return $choices;
-    }
 
     /**
      * Fill choices for event keyword group keywords field
@@ -217,10 +217,21 @@ class Settings {
      * @return mixed
      */
     public function get_places_from_options() {
-        return get_field(
-            self::OPTIONS_GROUP_KEY . '_place',
+        $formatted = [];
+        $places    = get_field(
+            self::OPTIONS_GROUP_KEY . '_place_repeater',
             'option'
         );
+
+        if ( empty( $places ) ) {
+            return $formatted;
+        }
+
+        foreach ( $places as $place ) {
+            $formatted[ $place['place_id'] ] = $place['place_text'];
+        }
+
+        return $formatted;
     }
 
     /**
