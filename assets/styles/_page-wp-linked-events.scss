@@ -54,6 +54,11 @@
             bottom: $spacing-2-xs;
             left: $spacing-s;
         }
+
+        // Override Helsinki theme
+        > li + li {
+            margin-top: 0 !important; // sass-lint:disable-line no-important
+        }
     }
 
     &__keyword {
