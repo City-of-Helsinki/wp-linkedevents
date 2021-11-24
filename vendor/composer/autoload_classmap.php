@@ -16,7 +16,6 @@ return array(
     'WPLinkedEvents\\Integrations\\LinkedEvents\\Entities\\Offer' => $baseDir . '/src/Integrations/LinkedEvents/Entities/Offer.php',
     'WPLinkedEvents\\Integrations\\LinkedEvents\\Entities\\Place' => $baseDir . '/src/Integrations/LinkedEvents/Entities/Place.php',
     'WPLinkedEvents\\Integrations\\LinkedEvents\\Entities\\ServiceLinks' => $baseDir . '/src/Integrations/LinkedEvents/Entities/ServiceLinks.php',
-    'WPLinkedEvents\\Integrations\\Palvelukartta\\ApiClient' => $baseDir . '/src/Integrations/Palvelukartta/ApiClient.php',
     'WPLinkedEvents\\LinkedEventsBlock' => $baseDir . '/src/LinkedEventsBlock.php',
     'WPLinkedEvents\\LinkedEventsPlugin' => $baseDir . '/src/LinkedEventsPlugin.php',
     'WPLinkedEvents\\Settings' => $baseDir . '/src/Settings.php',
