@@ -51,8 +51,9 @@ class ApiClient extends \WPLinkedEvents\ApiClient {
         $params = [
             'publisher' => $event->get_publisher(),
             'include'   => 'organizer,location,keywords',
-            'page_size' => 6,
+            'page_size' => 7,
         ];
+        $limit  = 6;
 
         if ( ! empty( $event->get_keywords() ) ) {
             $params['keywords'] = implode(
@@ -82,6 +83,14 @@ class ApiClient extends \WPLinkedEvents\ApiClient {
             $events = array_map( function ( $event ) use ( $event_settings ) {
                 return new Entities\Event( $event, $event_settings );
             }, $response->data );
+
+            $events = array_filter( $events, function ( $e ) use ( $event ) {
+                return $event->get_id() !== $e->get_id();
+            } );
+
+            if ( ! empty( $events ) && count( $events ) > $limit ) {
+                $events = array_slice( $events, 0, $limit );
+            }
 
             set_transient( $cache_key, $events, HOUR_IN_SECONDS * 2 );
         }
