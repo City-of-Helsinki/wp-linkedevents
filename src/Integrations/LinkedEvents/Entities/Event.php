@@ -130,7 +130,7 @@ class Event extends Entity {
         }
 
         try {
-            return new DateTime( $this->entity_data->start_time );
+            return new DateTime( $this->entity_data->start_time, new \DateTimeZone( 'Europe/Helsinki' ) );
         }
         catch ( Exception $e ) {
             error_log( $e->getMessage() );
@@ -150,7 +150,7 @@ class Event extends Entity {
         }
 
         try {
-            return new DateTime( $this->entity_data->end_time );
+            return new DateTime( $this->entity_data->end_time, new \DateTimeZone( 'Europe/Helsinki' ) );
         }
         catch ( Exception $e ) {
             error_log( $e->getMessage() );
