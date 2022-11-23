@@ -6,7 +6,7 @@
     "license": "GPL-3.0-or-later",
     "private": true,
     "dependencies": {
-        "hds-core": "^1.6.0",
+        "hds-core": "^2.7.0",
         "hds-design-tokens": "^1.6.0",
         "idempotent-babel-polyfill": "^7.4.4"
     },
