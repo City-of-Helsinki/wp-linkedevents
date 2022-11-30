@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'fb5eca8133abb57a500f8934b7c26ffb07f517ea',
+    'reference' => 'eea11d8188d46ef264181fb965b07b6bb62bb64f',
     'name' => 'devgeniem/wp-linkedevents',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'fb5eca8133abb57a500f8934b7c26ffb07f517ea',
+      'reference' => 'eea11d8188d46ef264181fb965b07b6bb62bb64f',
     ),
   ),
 );

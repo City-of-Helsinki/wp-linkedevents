@@ -21,7 +21,7 @@ if ( $event ) {
     $keywords       = $event->get_keywords();
 }
 ?>
-<main class="main-content page-wp-linked-events" id="main-content">
+<div class="main-content page-wp-linked-events">
     <article class="page-wp-linked-events__article">
         <?php if ( empty( $event ) ) : ?>
             <h1>
@@ -311,6 +311,6 @@ if ( $event ) {
             </div>
         </section>
     <?php endif; ?>
-</main>
+</div>
 
 <?php get_footer(); ?>
