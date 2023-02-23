@@ -7,7 +7,7 @@
     "private": true,
     "dependencies": {
         "hds-core": "^1.6.0",
-        "hds-design-tokens": "^1.6.0",
+        "hds-design-tokens": "^2.12.1",
         "idempotent-babel-polyfill": "^7.4.4"
     },
     "devDependencies": {
